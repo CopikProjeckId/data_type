@@ -67,6 +67,9 @@ fn main() {
         one_block + one_block + 80
     };
     println!("{}", block_value);
+
+    ifelse();
+    loo_p();
 }
 //* 함수 
 //* Function 선언시 Return Type 값 도 필수 지정
@@ -77,4 +80,51 @@ fn addition(a:u16, b:u16) -> u16 {
 //* return 을 사용하지 않을땐 ; 을 붙이지 않아야함 
 fn addition_2(a:u16, b:u16) -> u32 {
     a as u32 + b as u32
+}
+
+//* if else if else
+//* 기존 사용법과 동일 단! () 괄호 제외되어있음
+//* let 변수 선언시에도 if 사용가능
+fn ifelse() {
+    let number = 3;
+
+    if number < 5 {
+        println!("condition was true");
+    } else {
+        println!("condition was false");
+    }
+
+    let num2 = if number > 5 { 5 } else if number < 3 { 2 } else { 6 };
+    //* 6 할당됨
+    println!("{}", num2);
+}
+//* 반복문 
+//* loop , while , for
+//* loop : break 까지 무한반복
+//* while : 조건 달성까지 무한 반복
+//* for 조건제 반복
+
+fn loo_p() {
+    let mut number = 3;
+
+    while number != 0 {
+        println!("{}!", number);
+
+        number = number - 1;
+    }
+
+    println!("LIFTOFF!!!");
+
+    for i in 0..10 {
+        println!("{}", i);
+    }
+    let a = [10, 20, 30, 40, 50];
+    //* 배열 순회
+    for i in a.iter() {
+        println!("the value is: {}", i);
+    }
+    //* 역순으로 순회 
+    for i in (9..100).rev() {
+        println!("{}", i);
+    }
 }
